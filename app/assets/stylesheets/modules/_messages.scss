@@ -146,7 +146,7 @@
   }
   
   &__message-form{
-    padding: 20px 40px;
+    padding: 20px 50px 20px 40px;
     height: 90px;
     background-color: #d2d2d2;
 
@@ -168,10 +168,10 @@
       }
       &__image{
         cursor: pointer;
-        font-size: 20px;
+        font-size: 25px;
         position: absolute;
-        top: 10px;
-        right: 10px;
+        top: 6px;
+        right: 125px;
 
         &__file{
           display: none;
@@ -186,6 +186,7 @@
       margin-left: 15px;
       background-color: #38AEF0;
       color: white;
+      border: none;
       cursor: pointer;
     }
   }
