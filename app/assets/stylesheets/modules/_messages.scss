@@ -36,6 +36,7 @@
         .contents__btn{
           text-decoration: none;
           color: #ffffff;
+          padding-right: 5px;
         }
       }
     }
@@ -51,6 +52,8 @@
     &__group{
       box-sizing: border-box;
       padding: 20px 0 40px;
+      color: #ffffff;
+      text-decoration: none;
 
       &__name{
         font-size: 15px;
