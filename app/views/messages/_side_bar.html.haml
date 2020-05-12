@@ -4,13 +4,15 @@
       .side_bar__user-name__top-items__name
         = current_user.name
       .side_bar__user-name__top-items__icons
-        = link_to "#", class: "contents__btn" do
+        = link_to new_group_path, class: "contents__btn" do
           = icon('fas', 'edit')
-        = link_to edit_user_path(current_user), class: "contents__btn"  do
+        = link_to edit_user_path(current_user), class: "contents__btn" do
           = icon('fas', 'cog')
   .side_bar__group-list
-    .side_bar__group-list__group
-      .side_bar__group-list__group__name
-        techcamp
-      .side_bar__group-list__group__message
-        まだメッセージはありません。
+    - current_user.groups.each do |group|
+      .side_bar__group-list__group
+        = link_to '#' ,class: "side_bar__group-list__group" do
+          .side_bar__group-list__group__name
+            = group.name
+          .side_bar__group-list__group__message
+            メッセージはまだありません
