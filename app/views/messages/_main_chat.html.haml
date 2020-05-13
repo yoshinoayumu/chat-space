@@ -21,10 +21,10 @@
           aaaaaa
 
   .main_chat__message-form
-    %form.new_message
+    = form_with model: [@group, @message], html: {class: "new_message"}, local: true do |f|
       .input-box
-        %input{type: "text", class: "input-box__text", placeholder: "type a message"}
-        %label{class: "input-box__image"}
+        = f.text_field :content, class: 'input-box__text', placeholder: 'type a message'
+        = f.label :image, class: 'input-box__image' do
           = icon('far','image')
-        %input{type: "file", class: "input-box__image__file"}
-        %input{type: "submit", value: "Send", class: "submit-btn"}
+          = f.file_field :image, class: 'input-box__image__file'
+        = f.submit 'Send', class: 'submit-btn'
