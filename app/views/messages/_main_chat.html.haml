@@ -2,23 +2,17 @@
   .main_chat__group-info
     .main_chat__group-info__group
       .main_chat__group-info__group__name
-        test
+        = @group.name
       .main_chat__group-info__group__member-list
         Member：
         .main_chat__group-info__group__member-list__member-name
-          name   
-    = link_to "#", class: "edit__btn" do
+          - @group.users.each do |user|
+            =user.name
+    = link_to edit_group_path(@group), class: "edit__btn" do
       Edit
   .main_chat__message-list
-    .main_chat__message-list__message-box
-      .main_chat__message-list__message-box__message-info
-        .main_chat__message-list__message-box__message-info__name
-          name
-        .main_chat__message-list__message-box__message-info__date
-          2020年05月06日 00時57分
-      .main_chat__message-list__message-box__message
-        .main_chat__message-list__message-box__message__contents
-          aaaaaa
+    .MessageField
+    = render @messages
 
   .main_chat__message-form
     = form_with model: [@group, @message], html: {class: "new_message"}, local: true do |f|
