@@ -13,7 +13,6 @@
   .main_chat__message-list
     .MessageField
     = render @messages
-
   .main_chat__message-form
     = form_with model: [@group, @message], html: {class: "new_message"}, local: true do |f|
       .input-box
