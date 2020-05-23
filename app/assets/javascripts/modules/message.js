@@ -54,7 +54,6 @@ $(function(){
     })
     .done(function(data){
       let html = buildHTML(data);
-      console.log(html)
       $('.main_chat__message-list').append(html);
       $('.main_chat__message-list').animate({ scrollTop: $('.main_chat__message-list')[0].scrollHeight});      
     })
